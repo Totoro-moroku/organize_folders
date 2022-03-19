@@ -39,15 +39,24 @@ def moveFiles(m_files:list , new_path: str):
     shutil.move(file, new_path)
 
 
+def addTagsToFile(file, tags:list):
+  for tag in tags:
+    macos_tags.add(tag, file = file)
+
+
 def addTagsToFiles(at_files:list, tags:Union[str,list]):
   if type(tags) is str:
     tags = [tags]
 
   for file in at_files:
-    for tag in tags:
-      macos_tags.add(tag, file = file)
+    addTagsToFile(file, tags)
+
+    if file.is_dir():
+      childFile = getFiles(file)
+      addTagsToFiles(childFile, tags)
 
   return at_files
+
 
 
 def createDateFolders(dates: list, path:str):

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
   name='organizedFile',
-  version='1.0',
+  version='1.1',
   description='ファイルを日付ごとに整理する',
   author='Togashi Tomohiro',
   author_email='shinsi4545@gmail.com',
