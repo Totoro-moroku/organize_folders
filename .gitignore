@@ -11,4 +11,7 @@ ENV/
 env.bak/
 venv.bak/
 
+*.egg-info
+dist
+
 .DS_Store
