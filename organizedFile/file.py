@@ -1,4 +1,5 @@
 import os
+import re
 import shutil
 import macos_tags
 
@@ -8,21 +9,25 @@ from itertools import groupby
 from typing import Union
 
 IGNORE_FILES = [
-    ".DS_Store"
+    ".DS_Store",
+    r"[0-9]{4}-[0-9]{2}-[0-9]{2}"
 ]
 
 
 def isIgnoreFile(file_name: str):
-    return file_name in IGNORE_FILES
+    for ignore_file_name in IGNORE_FILES:
+        if re.search(ignore_file_name, file_name):
+            return True
+
+    return False
 
 
 def getFiles(path: str):
     p_path = Path(path)
 
-    print(p_path.is_file())
-
     if p_path.is_file():
         return list(filter(lambda file: not isIgnoreFile(file.name), [p_path]))
+
     return list(filter(lambda file: not isIgnoreFile(file.name), p_path.iterdir()))
 
 
@@ -88,7 +93,7 @@ def organizedFiles(path, toPath):
 
     files = getFiles(path)
 
-    toPath = diffPath(path, toPath)
+    # toPath = diffPath(path, toPath)
 
     print(files)
 
@@ -107,4 +112,4 @@ def organizedFiles(path, toPath):
 
         newPath = Path(toPath).resolve() / Path(date)
 
-        # moveFiles(dateFiles, newPath)
+        moveFiles(dateFiles, newPath)
