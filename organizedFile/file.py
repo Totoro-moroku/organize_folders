@@ -79,21 +79,11 @@ def timestampToStringDate(timeStamp, format="%Y-%m-%d"):
     return datetime.fromtimestamp(timeStamp).strftime(format)
 
 
-def diffPath(path: str, toPath: str):
-    if path == toPath:
-        toPath += "整理済み"
-        os.mkdir(toPath)
-
-    return toPath
-
-
 def organizedFiles(path, toPath):
 
     addTagsToFiles(getFiles(path), getEndDirName(path))
 
     files = getFiles(path)
-
-    # toPath = diffPath(path, toPath)
 
     print(files)
 
