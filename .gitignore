@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+__init__.py
+
 # Environments
 .env
 .venv
@@ -10,6 +12,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# test files
+test_dir/
 
 *.egg-info
 dist

@@ -1,0 +1,29 @@
+arrow==1.2.2
+binaryornot==0.4.4
+certifi==2021.10.8
+cffi==1.15.0
+chardet==4.0.0
+charset-normalizer==2.0.12
+click==8.0.1
+cookiecutter==1.7.3
+Flask==2.0.1
+idna==3.3
+itsdangerous==2.0.1
+Jinja2==3.0.1
+jinja2-time==0.2.0
+macos-tags==1.5.1
+MarkupSafe==2.0.1
+mdfind-wrapper==0.1.5
+organizedFile @ file:///Users/tomo/Study/python/01_organize_folders/dist/organizedFile-1.0.tar.gz
+organizeFilePackage @ file:///Users/tomo/Study/python/01_organize_folders/dist/organizeFilePackage-1.0.tar.gz
+poyo==0.5.0
+pycparser==2.21
+python-dateutil==2.8.2
+python-slugify==6.1.1
+requests==2.27.1
+schedule==1.1.0
+six==1.16.0
+text-unidecode==1.3
+urllib3==1.26.9
+Werkzeug==2.0.1
+xattr==0.9.9
